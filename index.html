@@ -1,11 +1,5 @@
 <!-- 	Template Authors: Stefan Lang, Eva Missoni - PLUS 
-		Template Creation Date: March-June 2020 
-		
-		IMPORTANT NOTICES FOR USERS/AUTHORS:  
-		SECTIONS TO BE EDITED BY AUTHORS ARE INDICATED AS FOLLOWS:  <!-- AUTHORS: DEFINE ... --> 
-<!--	THE COMMANDS <section> and </section>  EMBRACE THE CONTENT FOR EACH SINGLE SLIDE.
-		ALTERNATIVELY, YOU CAN USE MARKDOWN NOTATION TO CREATE YOUR SLIDES. More information: https://github.com/webpro/reveal-md 
-		-->
+		Template Creation Date: March-June 2020		-->
 		
 		
 <!doctype html>
@@ -14,46 +8,48 @@
 	<head>
 		<meta charset="utf-8">
 		 
-		<title>eo4geo template for Reveal JS</title>
-		
-	<!-- AUTHORS: DEFINE METADATA FOR WHOLE SLIDESET HERE: (Dublin Core Metadata format, complemented by BoK-Concepts) -->	
-		<meta property="dc:title" content="What is Copernicus?" />
-		<meta property="dc:creator" content="Stefan Lang" /> 
-		<meta property="dc:publisher" content="University of Salzburg" /> 
-		<meta property="dc:subject" content="Copernicus, EO4GEO, WP5, Satellite, Earth Observation" />
-		<meta property="dc:abstract" content="This is a template slideset for EO4GEO Partners to familiarize with EO4GEO, introducing the idea of Copernicus and its services. Nevertheless, content-generation is not the prime concern of the template" />
-		<meta property="dc:tableOfContents" content="(1) What is EO?; 
-							     (2) Benefits of Copernicus; 
-							     (3) Integration of Jupyter Notebooks; 
-							     (4) Integration of Youtube Video; 
-							     (5) Integration of H5P; 
-							     (6) Copernicus Services; 
-							     (7) Reference list; />
-		<meta property="dc:description" content="Learning outcomes: Understand remote sensing workflow including image acquisition, (pixel-based) image analysis, classification and validation; get to know online portals, data catalogues, and pricing schemes for satellite data; Familiarize with the European Copernicus Earth observation programme; Master standard image analysis routines as implemented in ArcGIS Pro" /> 
-		<meta property="dc:contributor" content="Barbara Hofer" />
-		<meta property="dc:contributor" content="Eva Missoni" />
-		<meta property="dc:created" content="2020-06-20" />
+		<title>Delineating agricultural parcels using AI</title>
+		<meta property="dc:title" content="Delineating agricultural parcels using AI" />
+		<meta property="dc:creator" content="VITO - Vlaamse Instelling voor Technologisch Onderzoek" /> 
+		<meta property="dc:publisher" content="VITO - Vlaamse Instelling voor Technologisch Onderzoek" /> 
+		<meta property="dc:subject" content="openEO, EO4GEO, Deep Learning, Parcel delineation, UNet, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content="In this presentation we will dive into the delineation of agricultural parcels using a UNet (a deep learning architecture) on openEO (a standard implemented by several EO cloud processing platforms that allows you to access processing resources and collections)" />
+		<meta property="dc:tableOfContents" content="History of edge detection;
+							     UNet: theory; 
+							     Computing in the past;
+							     Computing today: openEO;
+							     openEO in practice;
+							     UNet in openEO: notebook;
+							     Using openEO yourself; />
+		<meta property="dc:description" content="Learning outcomes: Understand remote sensing workflow from image acquisition to image segmentation within openEO; Learn about the capabilities of openEO platform; Understand how a UNet works and how it can be implemented;" /> 
+		<meta property="dc:contributor" content="Bart Driessen" />
+		<meta property="dc:contributor" content="Jeroen Dries" />
+		<meta property="dc:contributor" content="Kasper Bonte" />
+		<meta property="dc:contributor" content="Kristof van Tricht" />
+		<meta property="dc:created" content="2021-05-20" />
 		<meta property="dc:type" content="teaching material" /> 
 		<meta property="dc:format" content="html" />
 		<meta property="dc:language" content="EN" />
-		<meta property="dc:SizeOrDuration" content="45min" />
+		<meta property="dc:SizeOrDuration" content="90min" />
 		<meta property="dc:audience" content="students" />
 		<meta property="dc:educationLevel" content="EQF 6" />
-		<meta property="dc:source” content="Existing youtube-video on Copernicus Climate Change Service; existing Jupyter Notebook on "Well switching in Bangladesh" />
-		<meta property="dc:rightsHolder" content="Stefan Lang" />
+		<meta property="dc:source” content="Jupyter Notebook on "Parcel delineation using openEO" />
+		<meta property="dc:rightsHolder" content="VITO - Vlaamse Instelling voor Technologisch Onderzoek" />
 		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
 
-		<link rel="dc:relation" href="eo4geo:IP1-3-2" />
-		<link rel="dc:relation" href="eo4geo:IP1-7" />
-		<link rel="dc:relation" href="eo4geo:IP1" />	
-		<link rel="dc:relation" href="eo4geo:IP3-4" />
-		<link rel="dc:relation" href="eo4geo:IP4-2-1" />
+		<link rel="dc:relation" href="eo4geo:IP3-4-6" />
+		<link rel="dc:relation" href="eo4geo:IP5-1-2" />
+		<link rel="dc:relation" href="eo4geo:GC1" />	
+		<link rel="dc:relation" href="eo4geo:GC4-1" />
+		<link rel="dc:relation" href="eo4geo:GC3" />
+		<link rel="dc:relation" href="eo4geo:IP3-4-7" />
+		<link rel="dc:relation" href="eo4geo:IP3-4-6-1" />
 
 		<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
 		<!-- CHOOSE BETWEEN 2 EO4GEO TEMPLATE THEMES:-->
-		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme"> <!-- white background design  -->
 		<link rel="stylesheet" href="internal_restricted/v1.0/plugin/markdown/css/theme/simplemenu.css">
-		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design --> 
+		<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo_grey.css" id="theme">  <!-- anthrazit background design  -->
 		<!-- EO4GEO FONT ROBOTO SLAB -->
 		<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'> 
 		<link rel="stylesheet" href="partnerLogo.css" id="theme"> 
@@ -61,167 +57,68 @@
 
     <base target="_blank"> <!-- All links in the presentation are opened in a seperate tab"-->
  
+ 	<style>
+ 		body * {
+ 			font-family: Roboto Slab;
+ 		}
+ 		section {
+ 			top:  1em !important;
+ 		}
+ 		#EO {
+ 			top: 0em !important;
+ 		}
+ 		.row {
+ 			display:  flex;
+ 		}
+ 		.column {
+ 			flex:  1;
+ 			padding:  1em;
+ 		}
+ 		.docrow {
+ 			margin-left: -10em;
+ 		}
+ 		.doccol {
+ 			padding:  0;
+ 			margin-top:  3em;
+ 			min-width:  30em;
+ 		}
+ 		.nospacing p {
+ 			margin: 0px;
+ 			/*padding-left: 8em;*/
+ 			text-align: left;
+ 		}
+ 	</style>
+
 	</head>
 
 	<body>
 		  
 		<div class="reveal" >
-		
-			 <!-- FORMATTING FOR HEADER -->
+							
+				<div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
 			
-					
-				 <div class = "eo4geologo" style="width: 11%;height : 11%" ></div>	
-			
-				 <div class = "partnerlogo" style="width: 15%;height : 11%" ></div>		
-				 <div  class = "presentation_title" style=" text-align: center " >What is Copernicus?</div>	<!--The title of the presentation appears on each slide-->
-				 
+				<div class = "partnerlogo" style="width: 15%;height : 11%" ></div>		
+				<div  class = "presentation_title" style=" text-align: center " ><em>Delineating agricultural parcels using deep learning</em></div>	 
 
 				<div class="slides">
-				
-			
-				<!-- AUTHORS: DEFINE CONTENT ON YOUR FIRST SLIDE --> 
-				<section >
-					<h1>What is Copernicus?</h1>
-					(A demo slide deck using the <em>Reveal.js</em> framework)
-				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
-				<aside class="notes">
-					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
-				</aside>
-				</section>
-				
-				
-				<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
-				<!--<section class="scrollable">
-					<h1>Copernicus</h1> 
-					<br>Copernicus and Galileo are the two flagships of the <em>European Space Policy</em>. Galileo denotes the European satellite navigation system, while Copernicus is the name of the European Earth observation <a href="https://www.copernicus.eu">programme</a>
-					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
-				</section>
-				
-					<!-- AUTHORS: DEFINE CONTENT FOR YOUR SECOND SLIDE: --> 
-				<!--<section >
-					<h1>Copernicus</h1> 
-					<br>
-					 
-					<br><img  style="width: 100%; max-width: 600px; max-height:600px; height:100%" data-src="resources\2560pxAERONET.jpg" alt="Copernicus allegory">
-					 
-				</section>
-				
-				<!-- AUTHORS: Same content as above - now as example in Markdown language   --> <!-- AUTHORS: for horizontally organised slides, use three dashes ---, for vertical slides two dashes -- -->
-				<!--section data-markdown data-separator="---" data-separator-vertical="--" data-separator-notes="^Note:"> 
-				                    <script type="text/template">
-                        # What is Copernicus?
-                        (A demo slide deck using the Reveal.js framework)
-					
-						
-                        ---
-						
-                        # Copernicus
-                        Copernicus and Galileo are the two flagships of the European Space Policy. Galileo denotes the European satellite navigation system, while Copernicus is the name of the <a href="https://www.copernicus.eu">European Earth observation programme</a>
-						<img width="600" height="300" data-src="resources\template_WhatCopernicus\CopMountain.jpg" alt="Copernicus allegory">
-						
-						
-						--
-						
-						# Earth observation (EO)
-						EO is one out of three main space assets
-						- SatNav
-                        - SatCom
-						- SatObs (EO)
-						
-						<img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
-                    </script>
-                </section-->
-				
-			
-				
-				<!-- AUTHORS: DEFINE SECTIONS WITHIN A SECTION TO GET VERTICAL SLIDES:--> 
-				<section id="EO">
-					<section > 
-						<h2>Earth observation (EO)</h2> 
-						<p>EO is one out of three main <em>space assets</em>.</p>
-						<!-- AUTHORS: CREATE BULLETED LIST: --> 
-						<ul>
-							<li style="color:#89b3e479;">SatNav</li>
-							<li style="color:#89b3e479;">SatCom</li>
-							<li style="color:#337acc;">SatObs (EO)</li>
-						</ul>
-						<br><img width="600" height="250" data-src="resources\template_WhatCopernicus\3SpaceComponents.png" alt="3SpaceComponents">	
-						
-						<aside class="notes">
-						You can find your presenter notes here (hit »S« on your keyboard).
-						</aside>
-					</section>
-					
-					<section >
-						<h2 style="color:#89b3e479;">Satellite navigation (SatNav)</h2>
-						<p>The European SatNav programme is called <em>Galileo</em>. With EGNOS, the European differential global positioning system, it belongs to the world spanning <em>global navigation satellite systems</em> (GNSS).</p>
-						<br><img width="600" height="200" data-src="resources\template_WhatCopernicus\UseGalileo.jpg" alt="sat1">
-						<small>Galileo-enabled smartphones can be used in many different <a href="https://www.usegalileo.eu/">applications</a>.</small>
-					</section>
-					
-					<section >
-						<h2 style="color:#89b3e479;">Satellite communication (SatCom)</h2>
-						<p>SatCom allows <em>telecommunication</em> all around the globe. Communication satellites receive signals from Earth and retransmit them by a <em>transponder</em>.</p>
-						<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\SatComIntelsat.jpg" alt="sat1"></a>
-						<small>The satellite as a self-contained communications system, the example of <a href="https://www.intelsatgeneral.com/satellite-basics/">IntelSat</a>.</small>
-						
-					</section>
-					
-					<section >
-						<h2 style="color:#337acc;">Earth observation (EO)</h2>
-						<p>Earth observation is the systematic usage of <em>satellite remote sensing</em> technology for continuous or on-demand <em>imaging</em> or <em>measuring</em> the Earth surface </p>
-						<br><a href="#/EO"><img width="500" height="250" data-src="resources\template_WhatCopernicus\ISS_AstroAlex.jpg" alt="sat1"></a>
-						<small>A view from the Cupola, the observation deck of the ISS. Photograph by astronaut <a href="https://twitter.com/astro_alex">A. Geerst</a>.</small>
-						<br>
-						<a href="#/EO"> Back to top </a>
-					</section>
-				</section>
-				
-				<!-- AUTHORS: INCLUDE AN IMAGE IN YOUR SLIDE: --> 
-				<section ><h2> ... a little allegory on the benefit of Copernicus</h2>
-					<br>New EO data, depicted by the database symbol on the left hand side of the seesaw, make Mr/Mrs Copernicus better positioned for their observations. Thus, EO data <em>leverage</em> a better overview and understanding.
-					<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\EOlever.jpg" alt="Copernicus allegory">
-					<br>
-					
-					<!-- AUTHORS: ADD REFERENCES TO YOUR resources,... -->
-					<citation>(St Lang & A Traun, 2015) [set border to zero, set background to transparent, figure to be obtained via JQuery from pic/caption collection]</citation>
-				</section>
-				
+
+				<!-- special features -->
+<!-- 				<aside class="notes">				</aside> -->
+ 				<!-- <section class="scrollable"> -->
+<!-- 					<citation>(St Lang & A Traun, 2015) [set border to zero, set background to transparent, figure to be obtained via JQuery from pic/caption collection]</citation> -->
+
 				<!-- AUTHORS:   Option to Jupyter Notebook (Python) AS IFRAME (deriving from the H5P.org site or from a H5P plugin in Moodle, Blackboard, WordPress,...): --> 
-				<section data-background-iframe="https://nbviewer.jupyter.org/github/carljv/Will_it_Python/blob/master/ARM/ch5/arsenic_wells_switching.ipynb">
+<!-- 				<section data-background-iframe="https://nbviewer.jupyter.org/github/carljv/Will_it_Python/blob/master/ARM/ch5/arsenic_wells_switching.ipynb"> 
 				</section>
-				
-				<!-- AUTHORS: 1st Option to INCLUDE H5P CONTENT AS IFRAME (deriving from the H5P.org site or from a H5P plugin in Moodle, Blackboard, WordPress,...): --> 
-				<section data-background-iframe="https://ideaslab.sbg.ac.at/ideaslab/wp-admin/admin-ajax.php?action=h5p_embed&id=5">
-				</section>
-				
-				<!-- AUTHORS: 2nd Option to INCLUDE H5P CONTENT AS IFRAME (deriving from the H5P.org site or from a H5P plugin in Moodle, Blackboard, WordPress,...): -->
-				<section class="scrollable"> 
-					 <iframe src="https://ideaslab.sbg.ac.at/ideaslab/wp-admin/admin-ajax.php?action=h5p_embed&id=5" width="1481" height="1280" frameborder="0" allowfullscreen="allowfullscreen"></iframe></script>
-					</section>
+ -->				
+
 				<!--AUTHORS: Integration of Jupyter Notebooks from VITO-Platform - user authentification not solved yet -->
 				<!--section class="scrollable"> 
 					 <iframe src="https://notebooks.vgt.vito.be/user/emissoni/lab/tree/PLUS_Test.ipynb" width="1481" height="1280" frameborder="0" allowfullscreen="allowfullscreen"></iframe></script>
 				</section-->	
-					
-					
-				<section >
-					<section>
-						<h2>The Copernicus idea</h2>
-						<p>Copernicus comprises two major  <em>components</em>.</p>
-						<ul>
-							<li style="color:#337acc;">Space component</li>
-							<li style="color:#33b5cc;">(Integrated) Ground segment</li>
-						</ul>
-						<br><img width="400" height="200" data-src="resources\template_WhatCopernicus\sat1.jpg" alt="sat1">
-
-					</section>
-					
-					<section >
-						<h2 style="color:#337acc;">Space component (satellites)</h2>
-						<p>The Sentinel family is the backbone of the Copernicus EO space asset</p>
+								
 						<!-- AUTHORS: CREATE A TABLE: --> 
-						<table>
+<!-- 						<table>
 							<thead>
 								<tr>
 									<th><small>Satellite</th>
@@ -252,154 +149,12 @@
 								</tr>
 							</tbody>
 						</table>
-					</section>
-					<section >
-						<h2 style="color:#33b5cc;">Ground segment</h2>
-						<p>The Copernicus integrated ground segment includes</p>
-						<ul>
-							<li>Receiving stations</li>
-							<li>Satellite data storage systems</li>
-							<li>In-situ observation network</li>
-						</ul>
-						<br>
-					</section>
+ -->
 
-				</section>
-
-				<section >
-					<h3>beyond space assets and data</h3>
-					<br>The fundamental objective of Copernicus is to support <em>global policies and conventions</em> as well as <em>EU regulations and directives</em> with a defined portfolio of geospatial information services.
-				</section>
-				
-				<section >
 				<!-- AUTHORS: make long content scrollable --> 
-					<section class="scrollable">
-						<h2>Copernicus services</h2>
-						<p>There are six so-called <em>Copernicus [core] services</em> in six major thematic areas.</p>
-						<table><small>
-							<tr>
-							<ul>
-								<li>Land monitoring</li>
-								<li>Ocean monitoring</li>
-								<li>Atmosphere monitoring</li>
-							</ul>	
-							</tr>
-							<tr><ul>
-								<li>Climate change</li>
-								<li>Emergency management</li>
-								<li>Human security</li>
-							</ul></tr>
-							</small>
-						</table>
-						<br><img width="800" height="130" data-src="resources\template_WhatCopernicus\6services.png" alt="six services">
-						
-						<p>There are six so-called <em>Copernicus [core] services</em> in six major thematic areas.</p>
-						<table><small>
-							<tr>
-							<ul>
-								<li>Land monitoring</li>
-								<li>Ocean monitoring</li>
-								<li>Atmosphere monitoring</li>
-							</ul>	
-							</tr>
-							<tr><ul>
-								<li>Climate change</li>
-								<li>Emergency management</li>
-								<li>Human security</li>
-							</ul></tr>
-							</small>
-						</table>
-						<br><img width="800" height="130" data-src="resources\template_WhatCopernicus\6services.png" alt="six services">
-						
-						<p>There are six so-called <em>Copernicus [core] services</em> in six major thematic areas.</p>
-						<table><small>
-							<tr>
-							<ul>
-								<li>Land monitoring</li>
-								<li>Ocean monitoring</li>
-								<li>Atmosphere monitoring</li>
-							</ul>	
-							</tr>
-							<tr><ul>
-								<li>Climate change</li>
-								<li>Emergency management</li>
-								<li>Human security</li>
-							</ul></tr>							
-							</small>
-						</table>
-						<br><img width="800" height="130" data-src="resources\template_WhatCopernicus\6services.png" alt="six services">
-
-					</section>
-						<section>
-						<img width="150" height="60" data-src="resources\template_WhatCopernicus\CLMS_logo.png" alt="six services">
-						<h2 style="color:#33cc80;">Land monitoring (CLMS)</h2>
-						<p>Copernicus is a European system for monitoring the Earth.</p>
-						<img width="800" height="200" data-src="resources\template_WhatCopernicus\CLand.png" alt="six services">
-						<small>The four Copernicus land monitoring <a href="https://land.copernicus.eu">service</a> components</small>
-					</section>
-					<section>
-						<img width="100" height="100" data-src="resources\template_WhatCopernicus\CMEMS_logo.png" alt="six services">
-						<h2 style="color:#33adcc;">Ocean monitoring (CMEMS)</h2>
-						<p>The Copernicus Marine Environment Monitoring Service focuses on the global ocean.</p>
-						<img width="800" height="200" data-src="resources\template_WhatCopernicus\CMarine.png" alt="six services">
-						<small>The Copernicus marine monitoring <a href="http://marine.copernicus.eu/services-portfolio/access-to-products">service</a> portfolio</small>
-					</section>
-					<section>
-						<img width="250" height="80" data-src="resources\template_WhatCopernicus\CAMS_logo.png" alt="six services">
-						<h2 style="color:#33adcc8c;">Atmosphere monitoring (CAMS)</h2>
-						<p>The Copernicus Marine Environment Monitoring Service focuses on the global ocean.</p>
-						<img width="800" height="200" data-src="resources\template_WhatCopernicus\CAtm.png" alt="six services">
-						<small>The Copernicus atmosphere monitoring <a href="https://atmosphere.copernicus.eu/catalogue#/">service</a> portfolio</small>
-					</section>
-					<section>
-						<h2 style="color:#cc4533d3;">Climate change</h2>
-						<p>...</p>
-					</section>
-					<section>
-						<h2 style="color:#caae60b9;">Emergency management</h2>
-						<p>...</p>
-						<br>
-					</section>
-					<section>
-						<h2 style="color:#33adcc49;">Human security</h2>
-						<p>...</p>
-						<br>
-					</section>
-				</section>
-
-				<section >
-					<section >
-						<h2>The Copernicus ecosystem</h2>
-						<p>Copernicus engages different <em>actor groups</em>.</p>
-						<ul>
-							<li style="color:#bbb7a8;">Data providers</li>
-							<li style="color:#c5b2ca8f;">Service providers</li>
-							<li style="color:#cc5733;">Users and stakeholders</li>
-						</ul>
-						<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\UserUptake.png" alt="User uptake">
-					</section>
-					
-					<section>
-						<h2 style="color:#bbb7a8;">Data providers</h2>
-						<p>Next to the Sentinel satellites there is a series of contributing missions, including commercial providers of very high (spatial) resolution (VHR)  data.</p>
-						<br><img width="600" height="300" data-src="resources\template_WhatCopernicus\SatSubmeter.png" alt="Worldview-2">
-					</section>
-					
-					<section>
-						<h2 style="color:#c5b2ca8f;">Service providers</h2>
-						<p>...</p>
-						<br>
-					</section>
-					
-					<section>
-						<h2 style="color:#cc5733;">Users and stakeholders</h2>
-						<p>...</p>
-						<br>
-					</section>
-				</section>
-				
+					<!-- <section class="scrollable"> -->
 				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
-				<section> 
+<!-- 				<section> 
 				<h2> Reference list </h2>
 				<br>
 				<reference_list>exemplary doi:<br><br>
@@ -408,11 +163,651 @@
 				<a href="https://doi.org/10.1080/17538947.2017.1379154">10.1080/17538947.2017.1379154</a>
 				</reference_list>
 				</section>
-				
-				
-				<section>Slide show ends</section>
+ -->				
+
 			
-                </section>
+				<section style="margin-top: 7em;">
+					<h1>Delineating agricultural parcels using deep learning</h1>
+				</section>
+
+				<section>
+					<h1>List of abbreviations</h1>
+					<ul style="list-style: none; margin-top: 1em">
+						<li><strong>DS</strong>: Data Science</li>
+						<li><strong>CS</strong>: Computer Science</li>
+						<li><strong>DL</strong>: Deep Learning</li>
+						<li><strong>RS</strong>: Remote Sensing</li>
+						<li><strong>EO</strong>: Earth Observation</li>
+						<li><strong>CNN</strong>: Convolutional Neural Network</li>
+						<li><strong>NDVI</strong>: Normalized Difference Vegetation Index</li>
+					</ul>
+				</section>
+
+
+				<section id="EO">
+					<section>
+						<h1>Table of contents</h1>
+						<br>
+						<ul>
+							<li>The Data Science part</li>
+							<ul>
+								<li>History of edge detection</li>
+								<li>UNet</li>
+							</ul>
+							<li>The Computer Science part</li>
+							<ul>
+								<li>Introduction to openEO</li>
+								<li>openEO workflows</li>
+								<li>openEO in practice</li>
+							</ul>
+							<li>Demo notebook</li>
+							<li>How to make use of openEO yourself</li>
+						</ul>
+					</section>
+					<section>
+						<h1>Table of contents</h1>
+						<br>
+						<ul>
+							<li style="color: cyan">The Data Science part</li>
+							<ul style="color: cyan">
+								<li>History of edge detection</li>
+								<li>UNet</li>
+							</ul>
+							<li>The Computer Science part</li>
+							<ul>
+								<li>Introduction to openEO</li>
+								<li>openEO workflows</li>
+								<li>openEO in practice</li>
+							</ul>
+							<li>Demo notebook</li>
+							<li>How to make use of openEO yourself</li>
+						</ul>						
+					</section>
+				</section>
+
+				<section>
+					<h1>Pre-DL edge detection methods</h1>
+					<ul>
+						<li>Roberts cross</li>
+						<li>Sobel</li>
+						<li>Prewitt</li>
+						<li>Laplacian</li>
+						<li>Canny</li>
+						<br>
+					Filters, but... small number and not trainable
+					</ul>
+				</section>
+
+				<section id="EO">
+					<section>
+						<h1>Rise of DL: CNN</h1>
+						When thinking of filters and trainable parameters, we think of...
+						<img src="resources/p1_datascience/cnn_simple.jpg" style="padding: 2em; background-color: white">
+					</section>
+
+					<section>
+						<h1>Convolution</h1>
+						<img src="resources/p1_datascience/convolution.png" style="padding: 1em; background-color: white">
+					</section>
+
+					<section>
+						<h1>Max pooling</h1>
+						<img src="resources/p1_datascience/max_pool.png" style="padding: 1em; background-color: white">
+					</section>
+
+					<section>
+						<h1>More complex CNN's</h1>
+						Still are composites of these basic operations
+						<img src="resources/p1_datascience/inception_v3.png" style="padding: 1em; background-color: white">
+					</section>
+
+					<section>
+						<h1 style="margin-bottom: 2em">What.. but where?</h1>
+						Standard CNN's can be used to predict <em><strong>what</strong></em> is in the image, but not <em><strong>where</strong></em> in the image it is
+					</section>
+				</section>
+				
+				<section id="EO">
+					<section>
+						<h1>Ciresan et al. 2012</h1>
+						<div class="row">
+							<div class="column">
+								<img height="400em" src="resources/p1_datascience/ciresan_et_al.png">
+							</div>
+							<div class="column">
+								<ul>
+									<br>
+									Works by doing inference using a CNN (i.e., classifying "what") for every pixel in the image (hence getting an idea about the "where")
+									<br><br>
+									Outperformed by large margin competition on ISBI 2012 segmentation challenge, but...
+									<li>Slow</li>
+									<li>Small receptive field</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h1>The solution: UNet</h1>
+						<ul style="margin-top: 2em">
+							<li>Based on paper: https://arxiv.org/pdf/1505.04597.pdf</li>
+							<li>Original code based on caffe and available as well</li>
+							<li>Winner of ISBI cell tracking challenge 2015</li>
+						</ul>
+						<p style="margin: 4em">The authors succesfully attempted to calculate both the "what" and the "where" in one single neural network by adding an upconvolution path to a standard CNN recreate original image dimensions</p>
+					</section>
+
+
+					<section>
+						<h1>UNet architecture</h1>
+						<img src="resources/p1_datascience/unet.png">
+					</section>
+
+					<section>
+						<h1>Transposed convolution</h1>
+						<img src="resources/p1_datascience/t_conv.png">
+					</section>
+
+					<section>
+						<h1>Overlap strategy: mirroring</h1>
+						<img src="resources/p1_datascience/mirroring.png">
+					</section>
+
+					<section>
+						<h1>Our UNet implementation</h1>
+						<ul style="margin: 2em">
+							Adaptations we made to original Unet:
+							<li>We used sigmoid instead of softmax with two classes</li>
+							<li>We are using same padding instead of valid padding (=no padding) > no need for cropping</li>
+							<li>Our input and output dimensions are different (128x128)</li>
+							<li>Added batch normalization</li>
+						</ul>
+					</section>
+
+					<section>
+						<h1>Our UNet implementation</h1>
+						<img src="resources/p1_datascience/simplified_unet.png">
+					</section>
+
+				</section>
+
+				<section>
+					<h1>Table of contents</h1>
+					<br>
+					<ul>
+						<li>The Data Science part</li>
+						<ul>
+							<li>History of edge detection</li>
+							<li>UNet</li>
+						</ul>
+						<li style="color: cyan">The Computer Science part</li>
+						<ul>
+							<li style="color: cyan">Introduction to openEO</li>
+							<li>openEO workflows</li>
+							<li>openEO in practice</li>
+						</ul>
+						<li>Demo notebook</li>
+						<li>How to make use of openEO yourself</li>
+					</ul>
+				</section>
+
+				<section id="EO">
+					<section>
+						<h1>Traditional workflow</h1>
+						<img src="resources/p2_computerscience/traditional.jpg">
+					</section>
+
+					<section>
+						<h1>Cloud providers</h1>
+						<img src="resources/p2_computerscience/clouds.png">
+					</section>
+				</section>
+
+				<section id="EO">
+					<section>
+						<h1>Solution: openEO</h1>
+						<p style="margin: 3em"><em>openEO develops an open application programming interface (API) that connects clients like R, Python and JavaScript to big Earth observation cloud back-ends in a simple and unified way.</em>
+							<br><br>
+							<a href="https://openeo.cloud/">website of openEO platform</a>
+						</p>
+					</section>
+
+					<section>
+						<h1>Solution: openEO</h1>
+						Various backends can be accessed through openEO using same client side syntax
+						<img style="padding: .5em; background-color: white" src="resources/p2_computerscience/openeo_api.jpg">
+					</section>
+
+					<section>
+						<h1>openEO: data harmonization</h1>
+						<img style="background-color: #293133" src="resources/p2_computerscience/harmonization.png">
+					</section>
+				</section>
+
+				<section id="EO">
+					<section>
+						<h1>openEO: inner workings</h1>
+						Client operations are transformed to JSON in a format that we call "process graphs", and sent to the various backends to be interpreted and executed
+						<img style="padding: 1em; background-color:  white" src="resources/p2_computerscience/interpretation.png">
+					</section>
+
+					<section>
+						<h1>openEO: datacubes</h1>
+						Collections are represented as datacubes. Datacubes are multidimensional arrays with one or more spatial or temporal dimension(s)
+						<img src="resources/p2_computerscience/datacubes.png">
+						<a href="https://openeo.org/documentation/1.0/datacubes.html">Datacubes</a>
+					</section>
+				</section>
+
+				<section>
+					<h1>Table of contents</h1>
+					<br>
+					<ul>
+						<li>The Data Science part</li>
+						<ul>
+							<li>History of edge detection</li>
+							<li>UNet</li>
+						</ul>
+						<li style="color: cyan">The Computer Science part</li>
+						<ul>
+							<li>Introduction to openEO</li>
+							<li style="color: cyan">openEO workflows</li>
+							<li>openEO in practice</li>
+						</ul>
+						<li>Demo notebook</li>
+						<li>How to make use of openEO yourself</li>
+					</ul>
+				</section>
+
+				<section id="EO">
+					<section>
+						<h1>ML workflow: data collection</h1>
+						<img style="background-color: white; padding: 1em; border-radius: 25px;" src="resources/p2_computerscience/data.png">
+					</section>
+
+					<section>
+						<h1>Available collections</h1>
+						<div class="row">
+							<div class="column nospacing">
+								<p><strong>76 collections available, a.o.:</strong></p>
+								<p>Sentinel 1-2-3-5p</p>
+								<p>Landsat 4-5-7-8</p>
+								<p>Copernicus DEM</p>
+								<p>PROBA-V</p>
+								<p>MODIS</p>
+								<p>Copernicus Global Land</p>
+								<p>ECMWF Agera5</p>
+								<br>
+								<p><strong>Coming up:</strong></p>
+								<p>WorldCover Landcover</p>
+								<p>EEA Phenology</p>
+								<p>Commercial data</p>
+								<p>Additional Euro Datacube collections</p>
+							</div>
+							<div class="column">
+								<br><br><br>
+								<a href="https://docs.openeo.cloud/data-collections/">collection overview</a>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<section id="EO">
+					<section>
+						<h1>ML workflow: feature engineering</h1>
+						<img style="background-color: white; padding: 1em; border-radius: 25px;" src="resources/p2_computerscience/feateng.png">
+					</section>
+
+					<section>
+						<h1>Feature engineering operations</h1>
+						<div class="row">
+							<div class="column nospacing">
+								<ul>
+									<li>Masking</li>
+									<li>Filtering</li>
+									<li>Band math</li>
+									<li>Aggregating over temporal periods</li>
+									<li>Aggregating spatially</li>
+									<li>Merging cubes</li>
+									<li>Rescaling</li>
+									<li>Resampling</li>
+									<li>Applying functions along the temporal or band dimension</li>
+									<li>Calculating indices</li>
+									<li>Feature sampling</li>
+								</ul>
+							</div>
+							<div class="column nospacing">
+								<br>
+								<p><a href="https://docs.openeo.cloud/processes/">List of supported processes</a></p>
+							</div>
+						</div>
+					</section>
+				</section>
+				
+				<section id="EO">
+					<section>
+						<h1>ML workflow: modeling & evaluation</h1>
+						<img style="background-color: white; padding: 1em; border-radius: 25px;" src="resources/p2_computerscience/modeling.png">
+					</section>
+
+					<section>
+						<h1 style="margin-bottom: 1em;">Modeling outside of openEO</h1>
+						Generally, we model outside of openEO. The workflow then looks like this:
+						<ul>
+							<li>Load a collection, calculate features</li>
+							<li>Extract the features into points for which you have reference data using <em><strong>filter_spatial</strong></em></li>
+							<li>Train a model locally in your own environment, own GPU's, etc.</li>
+							<li>Apply your model using a UDF (see next slide)</li>
+						</ul><br><br>
+						<p><a href="https://open-eo.github.io/openeo-python-client/cookbook/sampling.html?highlight=filter_spatial">documentation feature sampling using filter_spatial</a></p>
+						<p><a href="https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb">code example of sampling using filter_spatial and applying model using UDF</a></p>
+					</section>
+
+					<section>
+						<h1>UDF's: User Defined Functions</h1>
+						<p><em>Writing custom code that can be executed on a backend</em></p>
+
+						<ul>
+						<p style="text-align: left;">Used in four different situations:</p>
+							<li>Applying a process to each pixel: <em><strong>apply</strong></em></li>
+							<li>Applying a process to all pixels along a dimension, without changing cardinality: <em><strong>apply_dimension</strong></em></li>
+							<li>Reducing values along a dimension: <em><strong>reduce_dimension</strong></em></li>
+							<li>Applying a process to all pixels in a multidimensional neighborhood: <em><strong>apply_neighborhood</strong></em></li>
+						</ul><br><br>
+						<a href="https://open-eo.github.io/openeo-python-client/udf.html?highlight=process%20graph">more information on UDF's</a>
+					</section>
+
+
+					<section>
+						<h1 style="margin-bottom: 1em;">Modeling in openEO</h1>
+						We do however also support basic modeling within openEO, at the moment only <em>Random Forest</em> and <em>Catboost</em>. However, we do not support automated tuning methods such as GridSearch or RandomSearch, so it might still be faster to use previous method depending on your use case.
+						<br><br>
+						<p><a href="https://github.com/openEOPlatform/SRR3_notebooks/blob/main/notebooks/Demo%20UC9.ipynb">example code using our native Random Forest</a></p>
+						<p><a href="https://open-eo.github.io/openeo-python-client/machine_learning.html">documentation on native ML functionality</a></p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h1>ML workflow: inference</h1>
+						<img style="background-color: white; padding: 1em; border-radius: 25px;" src="resources/p2_computerscience/inference.png">
+					</section>
+
+					<section style="width: 90%">
+						<h1>Inference</h1>
+						<ul style="margin-top: 1em;">
+							If you generated a model outside of openEO, you will do inference using a UDF. Some examples:
+							<li><a href="https://open-eo.github.io/openeo-python-client/udf.html?highlight=process%20graph">UDF documentation</a></li>
+							<li><a href="https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb">In-line code example</a></li>
+							<li><a href="https://github.com/eo4geocourses/VITO_Parcel-Delineation/blob/master/jupyter_notebook/Parcel%20delineation.ipynb">Separate python files code example</a></li>
+						</ul>
+						<br><br>
+						<ul>
+							If you generated a model inside of openEO, you will do inference using predict_random_forest or predict_catboost.
+							<li><a href="https://open-eo.github.io/openeo-python-client/machine_learning.html#inference">Documentation</a></li>
+							<li><a href="https://github.com/openEOPlatform/SRR3_notebooks/blob/main/notebooks/Demo%20UC9.ipynb">Example code</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h1>Summary</h1>
+					<img style="background-color: #293133" src="resources/p2_computerscience/summary.png">
+				</section>
+
+
+				<section>
+					<h1>Table of contents</h1>
+					<br>
+					<ul>
+						<li>The Data Science part</li>
+						<ul>
+							<li>History of edge detection</li>
+							<li>UNet</li>
+						</ul>
+						<li style="color: cyan">The Computer Science part</li>
+						<ul>
+							<li>Introduction to openEO</li>
+							<li>openEO workflows</li>
+							<li style="color: cyan">openEO in practice</li>
+						</ul>
+						<li>Demo notebook</li>
+						<li>How to make use of openEO yourself</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Documentation</h1>
+					<div class="row docrow">
+						<div class="column doccol">
+							<a href="https://docs.openeo.cloud/getting-started/python/#installation">Basic documentation</a>
+							<img src="resources/p2_computerscience/doc1.png">
+						</div>
+						<div class="column doccol">
+							<a href="https://open-eo.github.io/openeo-python-client/">Advanced documentation</a>
+							<img src="resources/p2_computerscience/doc2.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h1 style="margin-bottom: 1em;">Installation</h1>
+					<code>pip install openeo<br><br>
+					import openeo<br>
+					print(openeo.client_version())</code>
+					<br><br>
+					<p><a href="https://github.com/VITObelgium/notebook-samples/">Notebook examples using openEO</a></p>
+
+				</section>
+
+				<section>
+					<h1 style="margin-bottom: 1em;">Loading a collection</h1>
+					<div  style="text-align: left !important;">
+						<code>
+						connection = openeo.connect(“https://openeo.cloud.be”)<br>
+						&nbsp;&nbsp;.authenticate_oidc()
+						<br><br>
+						s2_cube = connection.load_collection("SENTINEL2_L2A",<br>
+							&nbsp;&nbsp;spatial_extent={"west":5.1,"east":5.2,"south":51.1,"north":51.2},<br>
+							&nbsp;&nbsp;temporal_extent=["2020-05-01","2020-05-20"],<br>
+							&nbsp;&nbsp;bands=["B03","B04","B08"])
+						</code>
+					</div>
+					<br>
+					<a href="https://docs.openeo.cloud/data-collections/">Overview of all collections</a><br>
+					<a href="https://docs.openeo.cloud/processes/#load_collection">Method description of load_collection</a><br>
+					Overview of all processes when coding: connection.list_processes()
+				</section>
+
+
+				<section id="EO">
+					<section>
+						<h1 style="margin-bottom: 1em;">Job management</h1>
+						Two types of jobs: <em>synchronous</em> and <em>batch</em> jobs.<br><br>
+						<em><strong>Synchronous jobs</strong></em>: fast calculations over small areas, direct download<br>
+						<em><strong>Batch jobs</strong></em>: heavier operations over larger areas / large time periods, downloaded later using a job ID
+					</section>
+					<section>
+						<h1 style="margin-bottom: 1em;">Synchronous vs batch jobs</h1>
+						<div  style="text-align: left !important;">
+							<em>Synchronous jobs</em><br>
+							<code>
+								s2_cube.max_time().download("out.geotiff",format="Gtiff")
+							</code>
+							<br><br>
+							<em>Batch jobs</em><br>
+							<code>
+								job = s2_cube.execute_batch("out.geotiff",format="Gtiff")<br>
+								job = s2_cube.send_job("out.geotiff",format="Gtiff")<br>
+								job.start_job()<br><br>
+								job.describe_job()<br>
+								job.stop_job()<br>
+								job.status()<br>
+								job.logs()
+							</code>
+						</div>
+					</section>
+				</section>
+
+				<section id="EO">
+					<section>
+						<h1>Filtering theory</h1>
+						<img style="padding:  0 3em; background-color: white" src="resources/p2_computerscience/filtering.png">
+					</section>
+					<section>
+						<h1 style="margin-bottom: 1em;">Filtering in practice</h1>
+						<div  style="text-align: left !important;">
+							Temporal filter<br>
+							<code>s2_cube.filter_temporal(extent="2016-01-01","2016-03-10"])</code><br><br>
+							Band filter<br>
+							<code>s2_cube.band("B02")</code><br><br>
+							Spatial filter<br>
+							<code>s2_cube.filter_bbox(west=5.15,east=5.16,south=51.14, north=51.16, crs=4326)</code>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h1 style="margin-bottom: 1em;">Band math</h1>
+					<em>Saving bands in a variable</em><br>
+					<code>
+						B04 = s2_cube.band("B04")<br>
+						B08 = s2_cube.band("B08")
+					</code><br><br>
+					<em>Doing some band math</em><br>
+					<code>
+						ndvi_cube = (B08 – B04) / (B08 + B04)
+					</code>
+				</section>
+
+				<section>
+					<h1 style="margin-bottom: 1em;">Index calculation</h1>
+					<code>
+						indices = compute_indices(s2_cube, ["NDVI", "NDMI", "NDGI", "NDRE5"])</code>
+						<br><br>
+						<em>Three methods:</em><br>
+						<code>
+						compute_index()<br>
+						compute_indices()<br>
+						compute_and_rescale_indices()
+					</code><br><br>
+					<a href="https://open-eo.github.io/openeo-python-client/cookbook/spectral_indices.html">Overview of index calculation methods</a><br>
+					<a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices">Overview of supported indices</a>
+				</section>
+
+				<section id="EO">
+					<section>
+						<h1>Applying operations</h1>
+						<img style="padding: 2em; background-color:  white" src="resources/p2_computerscience/apply.png">
+					</section>
+
+					<section>
+						<h1>One-liners</h1>
+						<code>
+							s2_cube.apply("absolute")<br>
+							s2_cube.apply(lambda x: x*2+3)<br>
+							s2_cube.apply(lambda x: x.absolute().cos())
+						</code><br><br>
+						See slide on UDF's for difference between <em>apply, apply_dimension, reduce_dimension</em> and <em>apply_neighbourhood</em>
+					</section>
+
+					<section>
+						<h1>More complex operations</h1>
+						<div  style="text-align: left !important; margin-left: 3em">
+							<code>
+								s2_cube.reduce_dimension(max, dimension="t")<br><br>
+
+								from openeo.processes import array_element<br>
+								def callback(data):<br>
+									&nbsp;&nbsp;band1 = array_element(data, index=0)<br>
+									&nbsp;&nbsp;band2 = array_element(data, index=1)<br>
+									&nbsp;&nbsp;return band1 + 1.2 * band2<br>
+								s2_cube.reduce_dimension(callback, dimension="bands")<br><br>
+
+								def callback2(data):<br>
+									&nbsp;&nbsp;return data.mean()<br>
+								s2_cube.reduce_dimension(callback2, dimension="t")
+							</code>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h1>Table of contents</h1>
+					<br>
+					<ul>
+						<li>The Data Science part</li>
+						<ul>
+							<li>History of edge detection</li>
+							<li>UNet</li>
+						</ul>
+						<li>The Computer Science part</li>
+						<ul>
+							<li>Introduction to openEO</li>
+							<li>openEO workflows</li>
+							<li>openEO in practice</li>
+						</ul>
+						<li style="color: cyan">Demo notebook</li>
+						<li>How to make use of openEO yourself</li>
+					</ul>
+				</section>
+
+<!-- 				<section data-background-iframe="https://nbviewer.jupyter.org/github/carljv/Will_it_Python/blob/master/ARM/ch5/arsenic_wells_switching.ipynb"> 
+ -->
+<!-- 				<section data-background-iframe="https://nbviewer.jupyter.org/github/eo4geocourses/VITO_Parcel-Delineation/blob/master/jupyter_notebook/Openeo%20basics.ipynb">
+				</section>
+ -->
+
+				<section>
+					<h1>Table of contents</h1>
+					<br>
+					<ul>
+						<li>The Data Science part</li>
+						<ul>
+							<li>History of edge detection</li>
+							<li>UNet</li>
+						</ul>
+						<li>The Computer Science part</li>
+						<ul>
+							<li>Introduction to openEO</li>
+							<li>openEO workflows</li>
+							<li>openEO in practice</li>
+						</ul>
+						<li>Demo notebook</li>
+						<li style="color: cyan">How to make use of openEO yourself</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Documentation</h1>
+					<div class="row docrow">
+						<div class="column doccol">
+							<a href="https://docs.openeo.cloud/getting-started/python/#installation">Basic documentation</a>
+							<img src="resources/p2_computerscience/doc1.png">
+						</div>
+						<div class="column doccol">
+							<a href="https://open-eo.github.io/openeo-python-client/">Advanced documentation</a>
+							<img src="resources/p2_computerscience/doc2.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h1>Early adopter</h1>
+					<ul>
+						<li>full access to all features of the platform</li>
+						<li>support on the forum and via an e-mail helpdesk</li>
+						<li>a discount on resource costs</li>
+						<li>ability to apply for and receive an ESA sponsored package that covers the full monthly cost of the package</li>
+					</ul><br><br>
+					<a href="https://docs.openeo.cloud/join/early_adopter.html">early adopter procedure</a><br>
+					<a href="https://docs.openeo.cloud/join/free_trial.html">apply for 30 day free trial</a>
+				</section>
+
+				<section><p style="font-size: 100px">Questions ?</p>
+					Contact us on our <a href="https://forum.openeo.cloud/">forum</a> or send us an email <br>jeroen.dries@vito.be <br> bart.driessen@vito.be</section>				
+			
 
               </div>
 

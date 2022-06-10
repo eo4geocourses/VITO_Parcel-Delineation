@@ -1,10 +1,10 @@
  .partnerlogo
 {
 
- content: url(./resources/partnerLogo.jpg);
+ content: url(./resources/logo.svg);
 top:0;
-  background: #fff;
-  background-color: #fff; 
+  background: #293133;
+  background-color: #293133; 
   height: 100%;
   width: 100%;
   
