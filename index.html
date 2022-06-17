@@ -37,6 +37,7 @@
 		<meta property="dc:rightsHolder" content="VITO - Vlaamse Instelling voor Technologisch Onderzoek" />
 		<meta property="dc:license" content="https://creativecommons.org/licenses/by-sa/4.0/deed.en" />
 
+		<link rel="dc:relation" href="eo4geo:IP3-6-2" />
 		<link rel="dc:relation" href="eo4geo:IP3-4-6" />
 		<link rel="dc:relation" href="eo4geo:IP5-1-2" />
 		<link rel="dc:relation" href="eo4geo:GC1" />	
@@ -87,6 +88,9 @@
  			/*padding-left: 8em;*/
  			text-align: left;
  		}
+ 		.colored {
+ 			color: #A4E2F0;
+ 		}
  	</style>
 
 	</head>
@@ -102,84 +106,23 @@
 
 				<div class="slides">
 
-				<!-- special features -->
 <!-- 				<aside class="notes">				</aside> -->
- 				<!-- <section class="scrollable"> -->
-<!-- 					<citation>(St Lang & A Traun, 2015) [set border to zero, set background to transparent, figure to be obtained via JQuery from pic/caption collection]</citation> -->
 
-				<!-- AUTHORS:   Option to Jupyter Notebook (Python) AS IFRAME (deriving from the H5P.org site or from a H5P plugin in Moodle, Blackboard, WordPress,...): --> 
-<!-- 				<section data-background-iframe="https://nbviewer.jupyter.org/github/carljv/Will_it_Python/blob/master/ARM/ch5/arsenic_wells_switching.ipynb"> 
-				</section>
- -->				
-
-				<!--AUTHORS: Integration of Jupyter Notebooks from VITO-Platform - user authentification not solved yet -->
-				<!--section class="scrollable"> 
-					 <iframe src="https://notebooks.vgt.vito.be/user/emissoni/lab/tree/PLUS_Test.ipynb" width="1481" height="1280" frameborder="0" allowfullscreen="allowfullscreen"></iframe></script>
-				</section-->	
-								
-						<!-- AUTHORS: CREATE A TABLE: --> 
-<!-- 						<table>
-							<thead>
-								<tr>
-									<th><small>Satellite</th>
-									<th><small>Sensor</th>
-									<th><small>Type</small></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Sentinel-1</td>
-									<td>SAR</td>
-									<td>radar</td>
-								</tr>
-								<tr>
-									<td>Sentinel-2</td>
-									<td>MSI</td>
-									<td>optical</td>
-								</tr>
-								<tr>
-									<td>Sentinel-3</td>
-									<td>...</td>
-									<td>...</td>
-								</tr>
-								<tr>
-									<td>Sentinel-5</td>
-									<td>...</td>
-									<td>...</td>
-								</tr>
-							</tbody>
-						</table>
- -->
-
-				<!-- AUTHORS: make long content scrollable --> 
-					<!-- <section class="scrollable"> -->
-				<!-- AUTHORS: CREATE YOUR LIST OF REFERENCES HERE: -->
-<!-- 				<section> 
-				<h2> Reference list </h2>
-				<br>
-				<reference_list>exemplary doi:<br><br>
-				Barbara Hofer (2018). Innovation in geoprocessing for a Digital Earth. International Journal in Digital Earth.
-				<br>
-				<a href="https://doi.org/10.1080/17538947.2017.1379154">10.1080/17538947.2017.1379154</a>
-				</reference_list>
-				</section>
- -->				
-
-			
 				<section style="margin-top: 7em;">
 					<h1>Delineating agricultural parcels using deep learning</h1>
 				</section>
 
 				<section>
 					<h1>List of abbreviations</h1>
+					<br>
 					<ul style="list-style: none; margin-top: 1em">
-						<li><strong>DS</strong>: Data Science</li>
-						<li><strong>CS</strong>: Computer Science</li>
-						<li><strong>DL</strong>: Deep Learning</li>
-						<li><strong>RS</strong>: Remote Sensing</li>
-						<li><strong>EO</strong>: Earth Observation</li>
-						<li><strong>CNN</strong>: Convolutional Neural Network</li>
-						<li><strong>NDVI</strong>: Normalized Difference Vegetation Index</li>
+						<li><a href="https://bok.eo4geo.eu/IP3-4-7"><strong>DS</strong>: Data Science</a></li>
+						<li><a href="https://bok.eo4geo.eu/GC"><strong>CS</strong>: Computer Science</a></li>
+						<li><a href="https://bok.eo4geo.eu/IP3-4-6"><strong>DL</strong>: Deep Learning</a></li>
+						<li><a href="https://bok.eo4geo.eu/GD2-2"><strong>RS</strong>: Remote Sensing</a></li>
+						<li><a href="https://bok.eo4geo.eu/PS3-2-4"><strong>EO</strong>: Earth Observation</a></li>
+						<li><a href="https://bok.eo4geo.eu/IP3-4-6-1"><strong>CNN</strong>: Convolutional Neural Network</a></li>
+						<li><a href="https://bok.eo4geo.eu/IP3-1-2-3"><strong>NDVI</strong>: Normalized Difference Vegetation Index</a></li>
 					</ul>
 				</section>
 
@@ -189,41 +132,115 @@
 						<h1>Table of contents</h1>
 						<br>
 						<ul>
-							<li>The Data Science part</li>
+							<li>Introduction</li>
+							<li>Field delineation: choosing a model</li>
 							<ul>
 								<li>History of edge detection</li>
 								<li>UNet</li>
+								<li>Pre- and postprocessing</li>
 							</ul>
-							<li>The Computer Science part</li>
+							<li>Field delineation: choosing a platform</li>
 							<ul>
 								<li>Introduction to openEO</li>
 								<li>openEO workflows</li>
 								<li>openEO in practice</li>
 							</ul>
-							<li>Demo notebooks</li>
-							<li>How to make use of openEO yourself</li>
+							<li>Let's start coding: demo notebooks</li>
 						</ul>
 					</section>
 					<section>
 						<h1>Table of contents</h1>
 						<br>
 						<ul>
-							<li style="color: cyan">The Data Science part</li>
-							<ul style="color: cyan">
+							<li style="color: cyan">Introduction</li>
+							<li>Field delineation: choosing a model</li>
+							<ul>
 								<li>History of edge detection</li>
 								<li>UNet</li>
+								<li>Pre- and postprocessing</li>								
 							</ul>
-							<li>The Computer Science part</li>
+							<li>Field delineation: choosing a platform</li>
 							<ul>
 								<li>Introduction to openEO</li>
 								<li>openEO workflows</li>
 								<li>openEO in practice</li>
 							</ul>
-							<li>Demo notebooks</li>
-							<li>How to make use of openEO yourself</li>
-						</ul>						
+							<li>Let's start coding: demo notebooks</li>
+						</ul>
 					</section>
 				</section>
+
+				<section id="EO">
+					<section>
+						<h1>Introduction</h1>
+						<div class="row">
+							<div class="column">
+								<img src="resources/introduction/parcels.PNG">
+							</div>
+							<div class="column">
+								<br><br>
+								Importance of field delineation:
+								<ul>
+									<li><strong>decision making and planning</strong> of ministries and private sector</li>
+									<li>facilitation of <strong>land registration</strong> and acquisition of land use rights for smallholder farmers</li>
+									<li>estimate <strong>subsidies</strong></li>
+									<li><strong>scientific purposes</strong> (climate modeling)</li>
+									<li>regulate <strong>water rights</strong></li>
+									<li>can <strong>improve classification results</strong> in other EO applications (e.g. crop classification)</li>
+								</ul>
+								<citation>(Garcia-Pedrero et al., 2017)</citation>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h1>Field delineation</h1>
+						Advanced use case that can be solved using instance <a href="https://bok.eo4geo.eu/IP3-5">segmentation</a>
+						<img src="resources/introduction/segmentation_techniques.jpg">
+						<citation a href="https://ai-pool.com/d/could-you-explain-me-how-instance-segmentation-works">(Wilson, 2019)</citation>
+					</section>
+
+					<section>
+						<h1>Learning objectives</h1>
+						<br>
+						The goal of this training is to teach you how to perform parcel delineation covering all aspects involved: the machine learning part, the computing part as well as what to keep in mind when prepping your data.
+
+						<br><br>
+
+						<!-- Learning outcomes -->
+						<ul>
+						At the end of this training, you will:
+							<li>Know how a U-Net works and why it was developed</li>
+							<li>Know about recent developments in distributed computing and why they are necessary</li>
+							<li>Be familiar with basic and more complex operations in openEO</li>
+							<li>Be able to do inference of pretrained U-Net models yourself</li>
+						</ul>
+
+
+					</section>
+				</section>
+
+				<section>
+					<h1>Table of contents</h1>
+					<br>
+					<ul>
+						<li>Introduction</li>
+						<li style="color: cyan">Field delineation: choosing a model</li>
+						<ul>
+							<li style="color: cyan">History of edge detection</li>
+							<li style="color: cyan">UNet</li>
+							<li>Pre- and postprocessing</li>
+						</ul>
+						<li>Field delineation: choosing a platform</li>
+						<ul>
+							<li>Introduction to openEO</li>
+							<li>openEO workflows</li>
+							<li>openEO in practice</li>
+						</ul>
+						<li>Let's start coding: demo notebooks</li>
+					</ul>
+				</section>
+
 
 				<section>
 					<h1>Pre-DL edge detection methods</h1>
@@ -234,36 +251,43 @@
 						<li>Laplacian</li>
 						<li>Canny</li>
 						<br>
-					Filters, but... small number and not trainable
+					<a href="https://bok.eo4geo.eu/IP3-4-1-1">Filters</a>, but... small number and not trainable
 					</ul>
+					<br>
+					<citation>(Amer & Abushaala, 2015)</citation>
 				</section>
 
 				<section id="EO">
 					<section>
-						<h1>Rise of DL: CNN</h1>
+						<h1>Rise of DL: <a href="https://bok.eo4geo.eu/IP3-4-6-1">CNN</a></h1>
 						When thinking of filters and trainable parameters, we think of...
 						<img src="resources/p1_datascience/cnn_simple.jpg" style="padding: 2em; background-color: white">
+						<citation>(Lecun et al., 1999)</citation>
 					</section>
 
 					<section>
-						<h1>Convolution</h1>
-						<img src="resources/p1_datascience/convolution.png" style="padding: 1em; background-color: white">
+						<h1><a href="https://bok.eo4geo.eu/IP3-6">Convolution</a></h1>
+						<img src="resources/p1_datascience/convolution.png" style="padding: 1em; background-color: white; height: 55vh">
+						<br>
+						<citation>(Basavarajaiah, 2019)</citation>
 					</section>
 
 					<section>
 						<h1>Max pooling</h1>
 						<img src="resources/p1_datascience/max_pool.png" style="padding: 1em; background-color: white">
+						<citation>(Papers with code, 2022)</citation>
 					</section>
 
 					<section>
 						<h1>More complex CNN's</h1>
 						Still are composites of these basic operations
-						<img src="resources/p1_datascience/inception_v3.png" style="padding: 1em; background-color: white">
+						<img src="resources/p1_datascience/inception_v3.png" style="padding: 1em; background-color: white; height: 55vh">
+						<citation>(Szegedy et al., 2016)</citation>
 					</section>
 
 					<section>
 						<h1 style="margin-bottom: 2em">What.. but where?</h1>
-						Standard CNN's can be used to predict <em><strong>what</strong></em> is in the image, but not <em><strong>where</strong></em> in the image it is
+						Standard <a href="https://bok.eo4geo.eu/IP3-4-6-1">CNN</a>'s can be used to predict <em><strong>what</strong></em> is in the image, but not <em><strong>where</strong></em> in the image it is
 					</section>
 				</section>
 				
@@ -285,6 +309,7 @@
 								</ul>
 							</div>
 						</div>
+						<citation>(Ciresan et al., 2012)</citation>
 					</section>
 
 					<section>
@@ -294,38 +319,46 @@
 							<li>Original code based on caffe and available as well</li>
 							<li>Winner of ISBI cell tracking challenge 2015</li>
 						</ul>
-						<p style="margin: 4em">The authors succesfully attempted to calculate both the "what" and the "where" in one single neural network by adding an upconvolution path to a standard CNN recreate original image dimensions</p>
+						<p style="margin: 4em">The authors succesfully attempted to calculate both the "what" and the "where" in one single neural network by adding an upconvolution path to a standard <a href="https://bok.eo4geo.eu/IP3-4-6-1">CNN</a> recreate original image dimensions</p>
+						<citation>(Ronneberger et al., 2015)</citation>
 					</section>
 
 
 					<section>
 						<h1>UNet architecture</h1>
-						<img src="resources/p1_datascience/unet.png">
+						<img src="resources/p1_datascience/unet.png" style="height: 65vh;">
+						<br>
+						<citation>(Ronneberger et al., 2015)</citation>
 					</section>
 
 					<section>
 						<h1>Transposed convolution</h1>
 						<img src="resources/p1_datascience/t_conv.png">
+						<citation>(Zhang et al., 2021)</citation>
 					</section>
 
 					<section>
 						<h1>Overlap strategy: mirroring</h1>
-						<img src="resources/p1_datascience/mirroring.png">
+						<img src="resources/p1_datascience/mirroring.png" style="height: 55vh;">
+						<br>
+						<citation>(Ronneberger et al., 2015)</citation>
 					</section>
+				</section>
 
+				<section id="EO">
 					<section>
-						<h1>Our UNet implementation</h1>
+						<h1>UNet implementation in this demo</h1>
 						<ul style="margin: 2em">
-							Adaptations we made to original Unet:
-							<li>We used sigmoid instead of softmax with two classes</li>
-							<li>We are using same padding instead of valid padding (=no padding) > no need for cropping</li>
-							<li>Our input and output dimensions are different (128x128)</li>
+							Adaptations made to original Unet:
+							<li>Use of sigmoid instead of softmax with two classes</li>
+							<li>Same padding instead of valid padding (=no padding) > no need for cropping</li>
+							<li>Input / output dimensions are different (128x128)</li>
 							<li>Added batch normalization</li>
 						</ul>
 					</section>
 
 					<section>
-						<h1>Our UNet implementation</h1>
+						<h1>This UNet implementation</h1>
 						<img src="resources/p1_datascience/simplified_unet.png">
 					</section>
 
@@ -335,30 +368,110 @@
 					<h1>Table of contents</h1>
 					<br>
 					<ul>
-						<li>The Data Science part</li>
+						<li>Introduction</li>
+						<li style="color: cyan">Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
 							<li>UNet</li>
+							<li style="color: cyan">Pre- and postprocessing</li>
 						</ul>
-						<li style="color: cyan">The Computer Science part</li>
+						<li>Field delineation: choosing a platform</li>
+						<ul>
+							<li>Introduction to openEO</li>
+							<li>openEO workflows</li>
+							<li>openEO in practice</li>
+						</ul>
+						<li>Let's start coding: demo notebooks</li>
+					</ul>
+				</section>
+
+
+				<section id="EO">
+					<section>
+						<h1>Pre- and postprocessing</h1>
+						<div style="padding: 0 5em">
+							<br>
+							Remember, U-Net takes 3 * height * width input, in which 3 is generally RGB
+							<br><br>
+							<ul>
+							EO data is more complex:
+								<li>More bands than just RGB</li>
+								<li>An added dimension: temporal</li>
+							</ul>
+							<br><br>
+							Therefore we use <a href="https://bok.eo4geo.eu/IP3-1-2-3">NDVI</a> to compress the band dimension and pass 3 different temporal snapshots as input
+						</div>
+					</section>
+
+					<section>
+						<h1><a href="https://bok.eo4geo.eu/IP1">Preprocessing</a></h1>
+						<div style="padding: 0 5em;">
+							<br><br>
+							The temporal <a href="https://bok.eo4geo.eu/IP3-1-2-3">NDVI</a> snapshots are chosen based on the amount of <a href="https://bok.eo4geo.eu/IP4-3-1">cloud-affected pixels</a> they contain.
+							<br><br>
+							Wrt preprocessing, the NDVI data is clamped as well as rescaled.
+						</div>
+					</section>
+
+					<section>
+						<h1>Postprocessing</h1>
+						<div class="row">
+							<div class="column">
+								<img src="resources/p1_datascience/segmentation.PNG">
+							</div>
+							<div class="column">
+								<br>
+								Also, U-Net does not do instance segmentation; it is a semantic segmentation algorithm.<br><br>
+								<ul>
+									Therefore, we:
+									<li>take the original continuous sigmoid output of the network</li>
+									<li>apply an extra post-processing step of calculating edges on the segmentation output using traditional filters</li>
+									<li>perform rag boundary analysis to convert them to instance segments</li>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h1>RAG</h1>
+						<br>
+						A Region Adjacency Graph (RAG) is composed of nodes/vertices representing regions and edges, and their respective adjacency determined by weights (rag_boundary). Different regions within a RAG can be merged based on their weights (cut_threshold).<br><br>
+						<img src="resources/introduction/rag_boundary.png">
+						<br>
+						<citation>Van der Walt et al., 2014</citation>
+					</section>
+				</section>
+
+				<section>
+					<h1>Table of contents</h1>
+					<br>
+					<ul>
+						<li>Introduction</li>
+						<li>Field delineation: choosing a model</li>
+						<ul>
+							<li>History of edge detection</li>
+							<li>UNet</li>
+							<li>Pre- and postprocessing</li>
+						</ul>
+						<li style="color: cyan">Field delineation: choosing a platform</li>
 						<ul>
 							<li style="color: cyan">Introduction to openEO</li>
 							<li>openEO workflows</li>
 							<li>openEO in practice</li>
 						</ul>
-						<li>Demo notebooks</li>
-						<li>How to make use of openEO yourself</li>
+						<li>Let's start coding: demo notebooks</li>
 					</ul>
 				</section>
 
 				<section id="EO">
 					<section>
 						<h1>Traditional workflow</h1>
-						<img src="resources/p2_computerscience/traditional.jpg">
+						<img src="resources/p2_computerscience/traditional.jpg" style="height: 65vh">
+						<br>
+						<citation>(Dove et al., 2015)</citation>
 					</section>
 
 					<section>
-						<h1>Cloud providers</h1>
+						<h1><a href="https://bok.eo4geo.eu/DA3-6">Cloud</a> providers</h1>
 						<img src="resources/p2_computerscience/clouds.png">
 					</section>
 				</section>
@@ -374,8 +487,12 @@
 
 					<section>
 						<h1>Solution: openEO</h1>
+						<br>
 						Various backends can be accessed through openEO using same client side syntax
-						<img style="padding: .5em; background-color: white" src="resources/p2_computerscience/openeo_api.jpg">
+						<br><br>
+						<img style="padding: .5em; background-color: white; height: 50vh;" src="resources/p2_computerscience/openeo_api.jpg">
+						<br>
+						<citation>openEO (20222)</citation>
 					</section>
 
 					<section>
@@ -387,13 +504,13 @@
 				<section id="EO">
 					<section>
 						<h1>openEO: inner workings</h1>
-						Client operations are transformed to JSON in a format that we call "process graphs", and sent to the various backends to be interpreted and executed
+						Client operations are transformed to JSON in a format called "process graphs", and sent to the various backends to be interpreted and executed
 						<img style="padding: 1em; background-color:  white" src="resources/p2_computerscience/interpretation.png">
 					</section>
 
 					<section>
-						<h1>openEO: datacubes</h1>
-						Collections are represented as datacubes. Datacubes are multidimensional arrays with one or more spatial or temporal dimension(s)
+						<h1>openEO: <a href="https://bok.eo4geo.eu/IP3-11-2">datacubes</a></h1>
+						Collections are represented as <a href="https://bok.eo4geo.eu/IP3-11-2">datacubes</a>. Datacubes are multidimensional arrays with one or more spatial or temporal dimension(s)
 						<img src="resources/p2_computerscience/datacubes.png">
 						<a href="https://openeo.org/documentation/1.0/datacubes.html">Datacubes</a>
 					</section>
@@ -403,25 +520,26 @@
 					<h1>Table of contents</h1>
 					<br>
 					<ul>
-						<li>The Data Science part</li>
+						<li>Introduction</li>
+						<li>Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
 							<li>UNet</li>
+							<li>Pre- and postprocessing</li>
 						</ul>
-						<li style="color: cyan">The Computer Science part</li>
+						<li style="color: cyan">Field delineation: choosing a platform</li>
 						<ul>
 							<li>Introduction to openEO</li>
 							<li style="color: cyan">openEO workflows</li>
 							<li>openEO in practice</li>
 						</ul>
-						<li>Demo notebooks</li>
-						<li>How to make use of openEO yourself</li>
+						<li>Let's start coding: demo notebooks</li>
 					</ul>
 				</section>
 
 				<section id="EO">
 					<section>
-						<h1>ML workflow: data collection</h1>
+						<h1>ML workflow: <a href="https://bok.eo4geo.eu/GD2">data collection</a></h1>
 						<img style="background-color: white; padding: 1em; border-radius: 25px;" src="resources/p2_computerscience/data.png">
 					</section>
 
@@ -459,21 +577,21 @@
 					</section>
 
 					<section>
-						<h1>Feature engineering operations</h1>
+						<h1><a href="https://bok.eo4geo.eu/IP3-4-10-1">Feature engineering</a> operations</h1>
 						<div class="row">
 							<div class="column nospacing">
 								<ul>
-									<li>Masking</li>
+									<li><a href="https://bok.eo4geo.eu/TA14-2-2-1-3">Masking</a></li>
 									<li>Filtering</li>
-									<li>Band math</li>
+									<li><a href="https://bok.eo4geo.eu/IP3-1">Band math</a></li>
 									<li>Aggregating over temporal periods</li>
-									<li>Aggregating spatially</li>
+									<li><a href="https://bok.eo4geo.eu/IP3-4-1">Aggregating spatially</a></li>
 									<li>Merging cubes</li>
 									<li>Rescaling</li>
-									<li>Resampling</li>
+									<li><a href="https://bok.eo4geo.eu/AM13-5">Resampling</a></li>
 									<li>Applying functions along the temporal or band dimension</li>
-									<li>Calculating indices</li>
-									<li>Feature sampling</li>
+									<li><a href="https://bok.eo4geo.eu/IP3-1-2">Calculating indices</a></li>
+									<li><a href="https://bok.eo4geo.eu/AM8-1">Feature sampling</a></li>
 								</ul>
 							</div>
 							<div class="column nospacing">
@@ -486,16 +604,16 @@
 				
 				<section id="EO">
 					<section>
-						<h1>ML workflow: modeling & evaluation</h1>
+						<h1>ML workflow: <a href="https://bok.eo4geo.eu/GC3-12">modeling</a> & <a href="https://bok.eo4geo.eu/IP4-2-1">evaluation</a></h1>
 						<img style="background-color: white; padding: 1em; border-radius: 25px;" src="resources/p2_computerscience/modeling.png">
 					</section>
 
 					<section>
 						<h1 style="margin-bottom: 1em;">Modeling outside of openEO</h1>
-						Generally, we model outside of openEO. The workflow then looks like this:
+						Generally, modeling is done outside of openEO. The workflow then looks like this:
 						<ul>
 							<li>Load a collection, calculate features</li>
-							<li>Extract the features into points for which you have reference data using <em><strong>filter_spatial</strong></em></li>
+							<li><a href="https://bok.eo4geo.eu/AM8-1">Extract the features into points</a> for which you have reference data using <em><strong>filter_spatial</strong></em></li>
 							<li>Train a model locally in your own environment, own GPU's, etc.</li>
 							<li>Apply your model using a UDF (see next slide)</li>
 						</ul><br><br>
@@ -512,7 +630,7 @@
 							<li>Applying a process to each pixel: <em><strong>apply</strong></em></li>
 							<li>Applying a process to all pixels along a dimension, without changing cardinality: <em><strong>apply_dimension</strong></em></li>
 							<li>Reducing values along a dimension: <em><strong>reduce_dimension</strong></em></li>
-							<li>Applying a process to all pixels in a multidimensional neighborhood: <em><strong>apply_neighborhood</strong></em></li>
+							<li>Applying a process to all pixels in a <a href="https://bok.eo4geo.eu/IP3-6">multidimensional neighborhood</a>: <em><strong>apply_neighborhood</strong></em></li>
 						</ul><br><br>
 						<a href="https://open-eo.github.io/openeo-python-client/udf.html?highlight=process%20graph">more information on UDF's</a>
 					</section>
@@ -520,7 +638,7 @@
 
 					<section>
 						<h1 style="margin-bottom: 1em;">Modeling in openEO</h1>
-						We do however also support basic modeling within openEO, at the moment only <em>Random Forest</em> and <em>Catboost</em>. However, we do not support automated tuning methods such as GridSearch or RandomSearch, so it might still be faster to use previous method depending on your use case.
+						Some basic modeling is also supported within openEO, but at the moment only <em><a href="https://bok.eo4geo.eu/IP3-4-7-1">Random Forest</a></em> and <em>Catboost</em>. However, at the moment automated tuning methods such as GridSearch or RandomSearch are not supported, so it is likely still faster to use previous method depending on your use case.
 						<br><br>
 						<p><a href="https://github.com/openEOPlatform/SRR3_notebooks/blob/main/notebooks/Demo%20UC9.ipynb">example code using our native Random Forest</a></p>
 						<p><a href="https://open-eo.github.io/openeo-python-client/machine_learning.html">documentation on native ML functionality</a></p>
@@ -535,7 +653,7 @@
 					</section>
 
 					<section style="width: 90%">
-						<h1>Inference</h1>
+						<h1><a href="https://bok.eo4geo.eu/GC3-14-2-2">Inference</a></h1>
 						<ul style="margin-top: 1em;">
 							If you generated a model outside of openEO, you will do inference using a UDF. Some examples:
 							<li><a href="https://open-eo.github.io/openeo-python-client/udf.html?highlight=process%20graph">UDF documentation</a></li>
@@ -561,19 +679,20 @@
 					<h1>Table of contents</h1>
 					<br>
 					<ul>
-						<li>The Data Science part</li>
+						<li>Introduction</li>
+						<li>Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
 							<li>UNet</li>
+							<li>Pre- and postprocessing</li>
 						</ul>
-						<li style="color: cyan">The Computer Science part</li>
+						<li style="color: cyan">Field delineation: choosing a platform</li>
 						<ul>
 							<li>Introduction to openEO</li>
 							<li>openEO workflows</li>
 							<li style="color: cyan">openEO in practice</li>
 						</ul>
-						<li>Demo notebooks</li>
-						<li>How to make use of openEO yourself</li>
+						<li>Let's start coding: demo notebooks</li>
 					</ul>
 				</section>
 
@@ -605,7 +724,7 @@
 					<h1 style="margin-bottom: 1em;">Loading a collection</h1>
 					<div  style="text-align: left !important;">
 						<code>
-						connection = openeo.connect(“https://openeo.cloud.be”)<br>
+						connection = openeo.connect("https://openeo.cloud")<br>
 						&nbsp;&nbsp;.authenticate_oidc()
 						<br><br>
 						s2_cube = connection.load_collection("SENTINEL2_L2A",<br>
@@ -669,7 +788,7 @@
 				</section>
 
 				<section>
-					<h1 style="margin-bottom: 1em;">Band math</h1>
+					<h1 style="margin-bottom: 1em;"><a href="https://bok.eo4geo.eu/IP3-1">Band math</a></h1>
 					<em>Saving bands in a variable</em><br>
 					<code>
 						B04 = s2_cube.band("B04")<br>
@@ -682,7 +801,7 @@
 				</section>
 
 				<section>
-					<h1 style="margin-bottom: 1em;">Index calculation</h1>
+					<h1 style="margin-bottom: 1em;"><a href="https://bok.eo4geo.eu/IP3-1-2">Index</a> calculation</h1>
 					<code>
 						indices = compute_indices(s2_cube, ["NDVI", "NDMI", "NDGI", "NDRE5"])</code>
 						<br><br>
@@ -737,19 +856,20 @@
 					<h1>Table of contents</h1>
 					<br>
 					<ul>
-						<li>The Data Science part</li>
+						<li>Introduction</li>
+						<li>Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
 							<li>UNet</li>
+							<li>Pre- and postprocessing</li>
 						</ul>
-						<li>The Computer Science part</li>
+						<li>Field delineation: choosing a platform</li>
 						<ul>
 							<li>Introduction to openEO</li>
 							<li>openEO workflows</li>
 							<li>openEO in practice</li>
 						</ul>
-						<li style="color: cyan">Demo notebooks</li>
-						<li>How to make use of openEO yourself</li>
+						<li style="color: cyan">Let's start coding: demo notebooks</li>
 					</ul>
 				</section>
 
@@ -759,55 +879,43 @@
 				<section data-background-iframe="https://nbviewer.jupyter.org/github/eo4geocourses/VITO_Parcel-Delineation/blob/master/jupyter_notebook/Parcel%20delineation.ipynb">
 				</section>
 
-
-				<section>
-					<h1>Table of contents</h1>
-					<br>
-					<ul>
-						<li>The Data Science part</li>
-						<ul>
-							<li>History of edge detection</li>
-							<li>UNet</li>
-						</ul>
-						<li>The Computer Science part</li>
-						<ul>
-							<li>Introduction to openEO</li>
-							<li>openEO workflows</li>
-							<li>openEO in practice</li>
-						</ul>
-						<li>Demo notebooks</li>
-						<li style="color: cyan">How to make use of openEO yourself</li>
-					</ul>
-				</section>
-
-				<section>
-					<h1>Documentation</h1>
-					<div class="row docrow">
-						<div class="column doccol">
-							<a href="https://docs.openeo.cloud/getting-started/python/#installation">Basic documentation</a>
-							<img src="resources/p2_computerscience/doc1.png">
-						</div>
-						<div class="column doccol">
-							<a href="https://open-eo.github.io/openeo-python-client/">Advanced documentation</a>
-							<img src="resources/p2_computerscience/doc2.png">
-						</div>
-					</div>
-				</section>
-
-				<section>
-					<h1>Early adopter</h1>
-					<ul>
-						<li>full access to all features of the platform</li>
-						<li>support on the forum and via an e-mail helpdesk</li>
-						<li>a discount on resource costs</li>
-						<li>ability to apply for and receive an ESA sponsored package that covers the full monthly cost of the package</li>
-					</ul><br><br>
-					<a href="https://docs.openeo.cloud/join/early_adopter.html">early adopter procedure</a><br>
-					<a href="https://docs.openeo.cloud/join/free_trial.html">apply for 30 day free trial</a>
-				</section>
-
 				<section><p style="font-size: 100px">Questions ?</p>
-					Contact us on our <a href="https://forum.openeo.cloud/">forum</a> or send us an email <br>jeroen.dries@vito.be <br> bart.driessen@vito.be</section>				
+					Contact us on our <a href="https://forum.openeo.cloud/">forum</a> or send us an email <br>jeroen.dries@vito.be <br> bart.driessen@vito.be</section>
+
+				<section class="scrollable">
+					<h2> Reference list </h2>
+					<br>
+					<reference_list>
+
+					Amer, G. M. H., & Abushaala, A. M. (2015). Edge detection methods. In 2015 2nd IEEE World Symposium on Web Applications and Networking (WSWAN) <a href="https://www.researchgate.net/profile/Ahmed-Abushaala/publication/340514789_Edge_Detection_Methods/links/5e8e23ba92851c2f5288e203/Edge-Detection-Methods.pdf">(pp. 1-7).</a>
+					<br>
+					<span class="colored">Basavarajaiah, M. (2019). 6 basic things to know about convolution. Medium. Available at: <a href="https://medium.com/@bdhuma/6-basic-things-to-know-about-convolution-daef5e1bc411">https://medium.com/@bdhuma/6-basic-things-to-know-about-convolution-daef5e1bc411</a> [Accessed at 17-06-2022]</span>
+					<br>
+					Ciresan, D., Giusti, A., Gambardella, L., & Schmidhuber, J. (2012). Deep neural networks segment neuronal membranes in electron microscopy images. Advances in neural information processing systems, <a href="https://proceedings.neurips.cc/paper/2012/file/459a4ddcb586f24efd9395aa7662bc7c-Paper.pdf">25.</a>
+					<br>
+					<span class="colored">Dove, E. S., Joly, Y., Tassé, A. M., & Knoppers, B. M. (2015). Genomic cloud computing: legal and ethical points to consider. European Journal of Human Genetics, <a href="https://www.nature.com/articles/ejhg2014196">23(10), 1271-1278.</a></span>
+					<br>
+					Garcia-Pedrero, A., Gonzalo-Martin, C., & Lillo-Saavedra, M. (2017). A machine learning approach for agricultural parcel delineation through agglomerative segmentation. International journal of remote sensing, <a href="https://www.tandfonline.com/doi/pdf/10.1080/01431161.2016.1278312">38(7), 1809-1819.</a>
+					<br>
+					<span class="colored">LeCun, Y., Haffner, P., Bottou, L., & Bengio, Y. (1999). Object recognition with gradient-based learning. In Shape, contour and grouping in computer vision <a href="https://www.researchgate.net/profile/Yann-Lecun/publication/2816141_Object_Recognition_with_Gradient-Based_Learning/links/0deec519dfa1d83065000000/Object-Recognition-with-Gradient-Based-Learning.pdf">(pp. 319-345).</a> Springer, Berlin, Heidelberg.</span>
+					<br>
+					openEO (2022). openEO Platform. Available at: <a href="https://openeo.cloud/">https://openeo.cloud/</a> [Accessed at 17-06-2022]
+					<br>
+					<span class="colored">Papers with code (2022). Max Pooling. Available at: <a href="https://paperswithcode.com/method/max-pooling">https://paperswithcode.com/method/max-pooling</a> [Accessed at 17-06-2022]</span>
+					<br>
+					Ronneberger, O., Fischer, P., & Brox, T. (2015). U-net: Convolutional networks for biomedical image segmentation. In International Conference on Medical image computing and computer-assisted intervention <a href="https://link.springer.com/content/pdf/10.1007/978-3-319-24574-4_28.pdf">(pp. 234-241).</a> Springer, Cham.
+					<br>
+					<span class="colored">Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J., & Wojna, Z. (2016). Rethinking the inception architecture for computer vision. In Proceedings of the IEEE conference on computer vision and pattern recognition <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Szegedy_Rethinking_the_Inception_CVPR_2016_paper.pdf">(pp. 2818-2826).</a></span>
+					<br>
+					Van der Walt, S., Schönberger, J. L., Nunez-Iglesias, J., Boulogne, F., Warner, J. D., Yager, N., … Yu, T. (2014). Module: future.graph. scikit-image: image processing in Python. PeerJ, 
+					<a href="https://scikit-image.org/docs/stable/api/skimage.future.graph.html">2, p.e453.</a>
+					<br>
+					<span class="colored">Wilson, J. (2019). How instance segmentation works. AI-pool. Available at: <a href="https://ai-pool.com/d/could-you-explain-me-how-instance-segmentation-works">https://ai-pool.com/d/could-you-explain-me-how-instance-segmentation-works</a> [Accessed at 17-06-2022]</span>
+					<br>
+					Zhang, A., Lipton, Z. C., Li, M., & Smola, A. J. (2021). Transposed Convolution. In Dive into deep learning. <a href="https://d2l.ai/chapter_computer-vision/transposed-conv.html">13.10.</a>
+					<br><br><br><br>
+					</reference_list>
+				</section>
 			
 
               </div>
