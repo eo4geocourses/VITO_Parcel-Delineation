@@ -12,16 +12,16 @@
 		<meta property="dc:title" content="Delineating agricultural parcels using deep learning" />
 		<meta property="dc:creator" content="VITO - Vlaamse Instelling voor Technologisch Onderzoek" /> 
 		<meta property="dc:publisher" content="VITO - Vlaamse Instelling voor Technologisch Onderzoek" /> 
-		<meta property="dc:subject" content="openEO, EO4GEO, Deep Learning, Parcel delineation, UNet, Satellite, Earth Observation" />
-		<meta property="dc:abstract" content="In this presentation we will dive into the delineation of agricultural parcels using a UNet (a deep learning architecture) on openEO (a standard implemented by several EO cloud processing platforms that allows you to access processing resources and collections)" />
+		<meta property="dc:subject" content="openEO, EO4GEO, Deep Learning, Parcel delineation, U-Net, Satellite, Earth Observation" />
+		<meta property="dc:abstract" content="In this presentation we will dive into the delineation of agricultural parcels using a U-Net (a deep learning architecture) on openEO (a standard implemented by several EO cloud processing platforms that allows you to access processing resources and collections)" />
 		<meta property="dc:tableOfContents" content="History of edge detection;
-							     UNet: theory; 
+							     U-Net: theory;
 							     Computing in the past;
 							     Computing today: openEO;
 							     openEO in practice;
-							     UNet in openEO: notebook;
+							     U-Net in openEO: notebook;
 							     Using openEO yourself; />
-		<meta property="dc:description" content="Learning outcomes: Understand remote sensing workflow from image acquisition to image segmentation within openEO; Learn about the capabilities of openEO platform; Understand how a UNet works and how it can be implemented;" />
+		<meta property="dc:description" content="Learning outcomes: Understand remote sensing workflow from image acquisition to image segmentation within openEO; Learn about the capabilities of openEO platform; Understand how a U-Net works and how it can be implemented;" />
 		<meta property="dc:contributor" content="Bart Driessen" />
 		<meta property="dc:contributor" content="Jeroen Dries" />
 		<meta property="dc:contributor" content="Kasper Bonte" />
@@ -111,7 +111,25 @@
 				<section style="margin-top: 7em;">
 					<h1>Delineating agricultural parcels using deep learning</h1>
 				</section>
+				<section>
+					<h1>Learning objectives</h1>
+					<br>
+					The goal of this training is to teach you how to perform parcel delineation covering all aspects involved: the machine learning part, the computing part as well as what to keep in mind when prepping your data.
 
+					<br><br>
+
+					<!-- Learning outcomes -->
+					<ul>
+						At the end of this training, you will:
+						<li>Know how a U-Net works and why it was developed</li>
+						<li>Know about recent developments in distributed computing and why they are necessary</li>
+						<li>Be familiar with basic and more complex operations in openEO</li>
+						<li>Be able to do inference of pre-trained U-Net models yourself</li>
+						<li>Be able to do delineate agricultural parcels</li>
+					</ul>
+
+
+				</section>
 				<section>
 					<h1>List of abbreviations</h1>
 					<br>
@@ -136,7 +154,7 @@
 							<li>Field delineation: choosing a model</li>
 							<ul>
 								<li>History of edge detection</li>
-								<li>UNet</li>
+								<li>U-Net</li>
 								<li>Pre- and postprocessing</li>
 							</ul>
 							<li>Field delineation: choosing a platform</li>
@@ -156,7 +174,7 @@
 							<li>Field delineation: choosing a model</li>
 							<ul>
 								<li>History of edge detection</li>
-								<li>UNet</li>
+								<li>U-Net</li>
 								<li>Pre- and postprocessing</li>								
 							</ul>
 							<li>Field delineation: choosing a platform</li>
@@ -175,7 +193,7 @@
 						<h1>Introduction</h1>
 						<div class="row">
 							<div class="column">
-								<img src="resources/introduction/parcels.PNG">
+								<img src="resources/introduction/parcels.PNG" style="width: 80%;height: 80%">
 							</div>
 							<div class="column">
 								<br><br>
@@ -200,25 +218,7 @@
 						<citation a href="https://ai-pool.com/d/could-you-explain-me-how-instance-segmentation-works">(Wilson, 2019)</citation>
 					</section>
 
-					<section>
-						<h1>Learning objectives</h1>
-						<br>
-						The goal of this training is to teach you how to perform parcel delineation covering all aspects involved: the machine learning part, the computing part as well as what to keep in mind when prepping your data.
 
-						<br><br>
-
-						<!-- Learning outcomes -->
-						<ul>
-						At the end of this training, you will:
-							<li>Know how a U-Net works and why it was developed</li>
-							<li>Know about recent developments in distributed computing and why they are necessary</li>
-							<li>Be familiar with basic and more complex operations in openEO</li>
-							<li>Be able to do inference of pre-trained U-Net models yourself</li>
-							<li>Be able to do delineate agricultural parcels</li>
-						</ul>
-
-
-					</section>
 				</section>
 
 				<section>
@@ -229,7 +229,7 @@
 						<li style="color: cyan">Field delineation: choosing a model</li>
 						<ul>
 							<li style="color: cyan">History of edge detection</li>
-							<li style="color: cyan">UNet</li>
+							<li style="color: cyan">U-Net</li>
 							<li>Pre- and postprocessing</li>
 						</ul>
 						<li>Field delineation: choosing a platform</li>
@@ -315,7 +315,7 @@
 					</section>
 
 					<section>
-						<h1>The solution: UNet</h1>
+						<h1>The solution: U-Net</h1>
 						<ul style="margin-top: 2em">
 							<li>Based on paper: https://arxiv.org/pdf/1505.04597.pdf</li>
 							<li>Original code based on caffe and available as well</li>
@@ -327,7 +327,7 @@
 
 
 					<section>
-						<h1>UNet architecture</h1>
+						<h1>U-Net architecture</h1>
 						<img src="resources/p1_datascience/unet.png" style="width: 80%;height: 80%">
 						<br>
 						<citation>(Ronneberger et al., 2015)</citation>
@@ -349,9 +349,9 @@
 
 				<section id="EO">
 					<section>
-						<h1>UNet implementation in this demo</h1>
+						<h1>U-Net implementation in this demo</h1>
 						<ul style="margin: 2em">
-							Adaptations made to original Unet:
+							Adaptations made to original U-Net:
 							<li>Use of sigmoid instead of softmax with two classes</li>
 							<li>Same padding instead of valid padding (=no padding) > no need for cropping</li>
 							<li>Input / output dimensions are different (128x128)</li>
@@ -360,7 +360,7 @@
 					</section>
 
 					<section>
-						<h1>This UNet implementation</h1>
+						<h1>This U-Net implementation</h1>
 						<img src="resources/p1_datascience/simplified_unet.png" style="width: 80%;height: 80%">
 					</section>
 
@@ -374,7 +374,7 @@
 						<li style="color: cyan">Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
-							<li>UNet</li>
+							<li>U-Net</li>
 							<li style="color: cyan">Pre- and postprocessing</li>
 						</ul>
 						<li>Field delineation: choosing a platform</li>
@@ -451,7 +451,7 @@
 						<li>Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
-							<li>UNet</li>
+							<li>U-Net</li>
 							<li>Pre- and postprocessing</li>
 						</ul>
 						<li style="color: cyan">Field delineation: choosing a platform</li>
@@ -483,7 +483,7 @@
 						<h1>Solution: openEO</h1>
 						<p style="margin: 3em"><em>openEO develops an open application programming interface (API) that connects clients like R, Python and JavaScript to big Earth observation cloud back-ends in a simple and unified way.</em>
 							<br><br>
-							<a href="https://openeo.cloud/">website of openEO platform</a>
+							<a href="https://openeo.cloud/">Website of openEO platform</a>
 						</p>
 					</section>
 
@@ -526,7 +526,7 @@
 						<li>Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
-							<li>UNet</li>
+							<li>U-Net</li>
 							<li>Pre- and postprocessing</li>
 						</ul>
 						<li style="color: cyan">Field delineation: choosing a platform</li>
@@ -558,15 +558,16 @@
 								<p>Copernicus Global Land</p>
 								<p>ECMWF Agera5</p>
 								<br>
+								<br>
+								<p><a href="https://docs.openeo.cloud/data-collections/">Full collection overview</a></p>
+							</div>
+							<div class="column nospacing">
 								<p><strong>Coming up:</strong></p>
 								<p>WorldCover Landcover</p>
 								<p>EEA Phenology</p>
 								<p>Commercial data</p>
 								<p>Additional Euro Datacube collections</p>
-							</div>
-							<div class="column">
-								<br><br><br>
-								<a href="https://docs.openeo.cloud/data-collections/">collection overview</a>
+								<br><br>
 							</div>
 						</div>
 					</section>
@@ -589,16 +590,18 @@
 									<li>Aggregating over temporal periods</li>
 									<li><a href="https://bok.eo4geo.eu/IP3-4-1">Aggregating spatially</a></li>
 									<li>Merging cubes</li>
+								</ul>
+								<br><br><br>
+								<p><a href="https://docs.openeo.cloud/processes/">Full list of supported processes</a></p>
+							</div>
+							<div class="column nospacing">
+								<ul>
 									<li>Rescaling</li>
 									<li><a href="https://bok.eo4geo.eu/AM13-5">Resampling</a></li>
 									<li>Applying functions along the temporal or band dimension</li>
 									<li><a href="https://bok.eo4geo.eu/IP3-1-2">Calculating indices</a></li>
-									<li><a href="https://bok.eo4geo.eu/AM8-1">Feature sampling</a></li>
-								</ul>
-							</div>
-							<div class="column nospacing">
-								<br>
-								<p><a href="https://docs.openeo.cloud/processes/">List of supported processes</a></p>
+									<li><a href="https://bok.eo4geo.eu/AM8-1">Feature sampling</a></li></ul>
+
 							</div>
 						</div>
 					</section>
@@ -619,12 +622,12 @@
 							<li>Train a model locally in your own environment, own GPU's, etc.</li>
 							<li>Apply your model using a UDF (see next slide)</li>
 						</ul><br><br>
-						<p><a href="https://open-eo.github.io/openeo-python-client/cookbook/sampling.html?highlight=filter_spatial">documentation feature sampling using filter_spatial</a></p>
-						<p><a href="https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb">code example of sampling using filter_spatial and applying model using UDF</a></p>
+						<p><a href="https://open-eo.github.io/openeo-python-client/cookbook/sampling.html?highlight=filter_spatial">Click here for the documentation on feature sampling using filter_spatial.</a></p>
+						<p><a href="https://github.com/openEOPlatform/SRR2_notebooks/blob/main/UC3%20-%20Crop%20type%20feature%20engineering%20using%20random%20forest.ipynb">Click here for a code example of sampling using filter_spatial and applying model using UDF.</a></p>
 					</section>
 
 					<section>
-						<h1>UDF's: User Defined Functions</h1>
+						<h1>UDFs: User Defined Functions</h1>
 						<p><em>Writing custom code that can be executed on a backend</em></p>
 
 						<ul>
@@ -634,7 +637,7 @@
 							<li>Reducing values along a dimension: <em><strong>reduce_dimension</strong></em></li>
 							<li>Applying a process to all pixels in a <a href="https://bok.eo4geo.eu/IP3-6">multidimensional neighborhood</a>: <em><strong>apply_neighborhood</strong></em></li>
 						</ul><br><br>
-						<a href="https://open-eo.github.io/openeo-python-client/udf.html?highlight=process%20graph">more information on UDF's</a>
+						<a href="https://open-eo.github.io/openeo-python-client/udf.html?highlight=process%20graph">Click here for more information on UDFs.</a>
 					</section>
 
 
@@ -642,8 +645,8 @@
 						<h1 style="margin-bottom: 1em;">Modeling in openEO</h1>
 						Some basic modeling is also supported within openEO, but at the moment only <em><a href="https://bok.eo4geo.eu/IP3-4-7-1">Random Forest</a></em> and <em>Catboost</em>. However, at the moment automated tuning methods such as GridSearch or RandomSearch are not supported, so it is likely still faster to use previous method depending on your use case.
 						<br><br>
-						<p><a href="https://github.com/openEOPlatform/SRR3_notebooks/blob/main/notebooks/Demo%20UC9.ipynb">example code using our native Random Forest</a></p>
-						<p><a href="https://open-eo.github.io/openeo-python-client/machine_learning.html">documentation on native ML functionality</a></p>
+						<p><a href="https://github.com/openEOPlatform/SRR3_notebooks/blob/main/notebooks/Demo%20UC9.ipynb">Click here for an example code using our native Random Forest.</a></p>
+						<p><a href="https://open-eo.github.io/openeo-python-client/machine_learning.html">Click here for the documentation on native ML functionality.</a></p>
 					</section>
 
 				</section>
@@ -685,7 +688,7 @@
 						<li>Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
-							<li>UNet</li>
+							<li>U-Net</li>
 							<li>Pre- and postprocessing</li>
 						</ul>
 						<li style="color: cyan">Field delineation: choosing a platform</li>
@@ -736,9 +739,14 @@
 						</code>
 					</div>
 					<br>
-					<a href="https://docs.openeo.cloud/data-collections/">Overview of all collections</a><br>
-					<a href="https://docs.openeo.cloud/processes/#load_collection">Method description of load_collection</a><br>
-					Overview of all processes when coding: connection.list_processes()
+					<a href="https://docs.openeo.cloud/data-collections/">Click here for an overview of all collections.</a><br>
+					<a href="https://docs.openeo.cloud/processes/#load_collection">Click here for the method description of load_collection.</a><br>
+					<br>
+					<div  style="text-align: left !important;">
+						To see an overview of all processes when coding: <br>
+
+						<code> connection.list_processes()</code>
+					</div>
 				</section>
 
 
@@ -813,8 +821,8 @@
 						compute_indices()<br>
 						compute_and_rescale_indices()
 					</code><br><br>
-					<a href="https://open-eo.github.io/openeo-python-client/cookbook/spectral_indices.html">Overview of index calculation methods</a><br>
-					<a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices">Overview of supported indices</a>
+					<a href="https://open-eo.github.io/openeo-python-client/cookbook/spectral_indices.html">Click here for an overview of index calculation methods.</a><br>
+					<a href="https://github.com/awesome-spectral-indices/awesome-spectral-indices">Click here for an overview of supported indices.</a>
 				</section>
 
 				<section id="EO">
@@ -830,7 +838,7 @@
 							s2_cube.apply(lambda x: x*2+3)<br>
 							s2_cube.apply(lambda x: x.absolute().cos())
 						</code><br><br>
-						See slide on UDF's for difference between <em>apply, apply_dimension, reduce_dimension</em> and <em>apply_neighbourhood</em>
+						See slide on UDFs for difference between <em>apply, apply_dimension, reduce_dimension</em> and <em>apply_neighbourhood</em>
 					</section>
 
 					<section>
@@ -862,7 +870,7 @@
 						<li>Field delineation: choosing a model</li>
 						<ul>
 							<li>History of edge detection</li>
-							<li>UNet</li>
+							<li>U-Net</li>
 							<li>Pre- and postprocessing</li>
 						</ul>
 						<li>Field delineation: choosing a platform</li>
