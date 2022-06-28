@@ -123,14 +123,6 @@ class Segmentation():
 def apply_datacube(cube: XarrayDataCube, context: Dict) -> XarrayDataCube:
 
     modeldir='/data/users/Public/driesseb/fielddelineation'
-    if context is not None:
-        modeldir=context.get('modeldir',modeldir)
-        debug = context.get('debug', False)
-        patch_size = context.get('patch_size', 128)
-    else:
-        debug = False
-        patch_size = 0
-
 
     cubearray:xarray.DataArray = cube.get_array()
     cubearray = cubearray.transpose('x','bands','y','t')
@@ -156,7 +148,7 @@ def apply_datacube(cube: XarrayDataCube, context: Dict) -> XarrayDataCube:
     s=Segmentation()
 
     models = load_models(modeldir)
-    window, (result, allgood) = s.processWindow(models, [], inputdata, debug = debug)
+    window, (result, allgood) = s.processWindow(models, [], inputdata)
 
     result=result.astype(np.float64)
     result_xarray = xarray.DataArray(result,dims=['x','y'],coords=dict(x=cubearray.coords['x'],y=cubearray.coords['y']))
